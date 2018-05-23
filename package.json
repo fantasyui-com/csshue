@@ -4,7 +4,7 @@
   "description": "CLI utility to uniformly rotate hue of colors in a css file.",
   "main": "index.js",
   "bin": {
-    "csshue": "./index.js"
+    "csshue": "./cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/fantasyui-com/csshue#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.15.1",
+    "getit": "^1.1.0",
     "squirm": "^1.1.0"
   }
 }
