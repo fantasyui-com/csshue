@@ -22,7 +22,7 @@ program
   //OPTIONAL
   .option('-o, --output [file]', 'path to output file, if not specified STDOUT is used')
 
-  .option('-r, --rotation [degree]', 'Number of degrees to rotate hue')
+  .option('-r, --rotate [degree]', 'Number of degrees to rotate hue')
   .option('-f, --format [type]', 'HTML color format hex, rgb, hsl, hsv, hwb, cmyk')
 
   .parse(process.argv);
@@ -32,25 +32,23 @@ if(!program.input) console.error(chalk.red('Error: input file is required for no
 const bean = {
   input: program.input,
   output: program.output||'STDOUT',
-  rotate: program.rotate||90,
+  rotate: parseInt(program.rotate)||90,
   format: program.format||'hex',
 }
 
 getit(program.input, function(err, css) {
-
   if(err){
     console.error(chalk.red('Error: ', err))
     return;
   }
-
   bean.css = css;
-
   csshue(bean).then(function(result){
     if(program.output === 'STDOUT'){
       console.log(result)
+    }else if(program.output === 'shh'){
+      // do nothing
     }else{
-      console.log(result)
+      fs.writeFileSync( path.normalize(program.output), result);
     }
   });
-
 });

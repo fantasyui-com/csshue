@@ -5,7 +5,7 @@
 
 module.exports = function({rotate}){
   return function({color, /* rule,decl,node */ }){
-    color = color.rotate(rotate);
+    color = color.rotate(rotate).rgb();
     return color;
   };
 };

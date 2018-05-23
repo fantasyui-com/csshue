@@ -1,4 +1,4 @@
-const squirm = require('../squirm');
+const squirm = require('squirm');
 const transformer = require('./hue-transformer.js');
 
 module.exports = function({css, rotate, format}){
@@ -8,11 +8,11 @@ module.exports = function({css, rotate, format}){
     const setup = {
       css,
       format,
-      logger:({color})=>{ console.log(color) },
+      logger:({color})=>{ },
       transformer:transformer({rotate}),
     };
 
     squirm(setup).then(result=>resolve(result));
 
-  }) // Promise
-} // module.exports
+  });
+}
