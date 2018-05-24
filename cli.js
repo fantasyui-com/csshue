@@ -23,6 +23,10 @@ program
   .option('-o, --output [file]', 'path to output file, if not specified STDOUT is used')
 
   .option('-r, --rotate [degree]', 'Number of degrees to rotate hue')
+
+  .option('-t, --text [value]', '0 - 1 value of text where 0 is black and 1 white, set to 0.1 by default.')
+  .option('-d, --desaturate [value]', '0 - 1 color desaturation upon rotation, set to 0.5 by default.')
+
   .option('-f, --format [type]', 'HTML color format hex, rgb, hsl, hsv, hwb, cmyk')
 
   .parse(process.argv);
@@ -32,9 +36,24 @@ if(!program.input) console.error(chalk.red('Error: input file is required for no
 const bean = {
   input: program.input,
   output: program.output||'STDOUT',
-  rotate: parseInt(program.rotate)||90,
+  rotate: parseInt(program.rotate)||0,
+  text: undefined,
+  desaturate: undefined,
   format: program.format||'hex',
 }
+
+if(program.text === '0'){
+  bean.text = 0;
+} else {
+  bean.text = parseFloat(program.text)||.1;
+}
+
+if(program.desaturate === '0'){
+  bean.desaturate = 0;
+} else {
+  bean.desaturate = parseFloat(program.desaturate)||.5;
+}
+
 
 getit(program.input, function(err, css) {
   if(err){

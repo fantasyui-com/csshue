@@ -1,7 +1,7 @@
 const squirm = require('squirm');
 const transformer = require('./hue-transformer.js');
 
-module.exports = function({css, rotate, format}){
+module.exports = function({css, rotate, desaturate, text, format}){
 
   return new Promise(function(resolve, reject){
 
@@ -9,7 +9,7 @@ module.exports = function({css, rotate, format}){
       css,
       format,
       logger:({color})=>{ },
-      transformer:transformer({rotate}),
+      transformer:transformer({rotate, desaturate, text}),
     };
 
     squirm(setup).then(result=>resolve(result));
