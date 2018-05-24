@@ -7,7 +7,7 @@ CLI utility to uniformly rotate hue of colors in a css file.
 
 Colors change everywhere, this may cause text readability issues, to address
 this issue all text is darkened to an almost black color. Text should be dark,
-in general. You can change that value or disable it altogether via the
+in general. You can change that value or disable it altogether via the -t flag.
 
 ![](screenshot.png)
 
