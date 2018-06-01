@@ -62,12 +62,12 @@ getit(program.input, function(err, css) {
   }
   bean.css = css;
   csshue(bean).then(function(result){
-    if(program.output === 'STDOUT'){
+    if(bean.output === 'STDOUT'){
       console.log(result)
-    }else if(program.output === 'shh'){
+    }else if(bean.output === 'shh'){
       // do nothing
     }else{
-      fs.writeFileSync( path.normalize(program.output), result);
+      fs.writeFileSync( path.normalize(bean.output), result);
     }
   });
 });
