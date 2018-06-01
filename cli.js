@@ -42,6 +42,11 @@ const bean = {
   format: program.format||'hex',
 }
 
+if(bean.input === bean.output){
+  console.error(chalk.red('Error: ', 'Input and Output cannot be the same.'))
+  process.exit(1);
+}
+
 if(program.text === '0'){
   bean.text = 0;
 } else {
@@ -55,7 +60,7 @@ if(program.desaturate === '0'){
 }
 
 
-getit(program.input, function(err, css) {
+getit(bean.input, function(err, css) {
   if(err){
     console.error(chalk.red('Error: ', err))
     return;
