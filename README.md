@@ -1,13 +1,15 @@
 # csshue
 CLI utility to uniformly rotate hue of colors in a css file.
 
+Shown below is stock bootstrap modified with the ```npx csshue``` command to give it a green tint by rotating colors by 200 degrees.
+
 ![](greenshot.png)
 
 ## Constraints
 
 Colors change everywhere, this may cause text readability issues, to address
 this issue all text is darkened to an almost black color. Text should be dark,
-in general. You can change that value or disable it altogether via the
+in general. You can change that value or disable it altogether via the -t flag.
 
 ![](screenshot.png)
 
