@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/fantasyui-com/csshue#readme",
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "color": "^3.1.2",
-    "commander": "^2.15.1",
+    "commander": "^2.20.0",
     "getit": "^1.1.0",
-    "squirm": "^1.6.0"
+    "squirm": "^2.4.0"
   }
 }
