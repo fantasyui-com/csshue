@@ -23,7 +23,7 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "color": "^3.1.2",
-    "commander": "^2.20.0",
+    "commander": "^2.20.3",
     "getit": "^1.2.0",
     "squirm": "^2.7.0"
   }
