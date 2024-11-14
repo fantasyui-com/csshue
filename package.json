@@ -1,6 +1,6 @@
 {
   "name": "csshue",
-  "version": "3.32.0",
+  "version": "3.33.0",
   "description": "CLI utility to uniformly rotate hue of colors in a css file.",
   "main": "index.js",
   "bin": {
